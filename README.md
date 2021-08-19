@@ -12,6 +12,8 @@ Vous pouvez directement cliquer ici:
 
 # Image:
 
+![alt text](https://github.com/Nde-Code/DroneGames/blob/main/game.png)
+
 # Documentation + information sur le projet:
 
 ## Attention:
