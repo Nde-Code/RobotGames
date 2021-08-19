@@ -12,7 +12,7 @@ Vous pouvez directement cliquer ici:
 
 # Image:
 
-![alt text](https://github.com/Nde-Code/DroneGames/blob/main/game.png)
+![alt text](https://github.com/Nde-Code/RobotGames/blob/main/robotgames.png)
 
 # Documentation + information sur le projet:
 
