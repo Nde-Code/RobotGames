@@ -6,7 +6,7 @@ Le jeu est fait en C# et avec Visual Studio.
 
 # Téléchargement:
 
-Vous pouvez directement cliquer ici: https://nathande.azurewebsites.net/download/RobotGames.zip
+Vous pouvez directement cliquer ici: https://nathande.azurewebsites.net/assets/download/RobotGames.zip
 
 > Votre antivirus va détecter le jeu comme malveillant car c'est un ".exe" non signé. Je vous recommande donc l'utilisation de "Windows Sandbox" (ou tout autre programme de machine virtuel) pour lancer le jeu si vous utilisez la version compilée (en .exe). Attention, si vous avez peu de mémoire, etc... les graphismes pourront s'avérer un peu "bugger"Votre antivirus va détecter le jeu comme malveillant car c'est un ".exe" non signé. Je vous recommande donc l'utilisation de "Windows Sandbox" (ou tout autre programme de machine virtuel) pour lancer le jeu si vous utilisez la version compilée (en .exe). Attention, si vous avez peu de mémoire, etc... les graphismes pourront s'avérer un peu "bugger".
 
