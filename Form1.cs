@@ -139,7 +139,7 @@ namespace RobotGames
             {
                 if (entityBu is PictureBox && (string)entityBu.Tag == "bulletTag")
                 {
-                    if (entityBu.Bounds.IntersectsWith(RPlayer.Bounds))
+                    if (entityBu.Bounds.IntersectsWith(MainPlayer.Bounds))
                     {
                         ammoEntityCount = 0;
                         ammoCount += 72;
@@ -153,7 +153,7 @@ namespace RobotGames
             {
                 if(entityMoney is PictureBox && (string)entityMoney.Tag is "MoneyBox")
                 {
-                    if (entityMoney.Bounds.IntersectsWith(RPlayer.Bounds))
+                    if (entityMoney.Bounds.IntersectsWith(MainPlayer.Bounds))
                     {
                         money++;
                         entityMoney.Dispose();
@@ -222,7 +222,7 @@ namespace RobotGames
                         entityGR.Dispose();
                         this.Controls.Remove(entityGR);
                     }
-                    if (entityGR.Bounds.IntersectsWith(RPlayer.Bounds))
+                    if (entityGR.Bounds.IntersectsWith(MainPlayer.Bounds))
                     {
                         score += 5;
                         pvBar -= 5;
@@ -293,7 +293,7 @@ namespace RobotGames
                         entityG.Dispose();
                         this.Controls.Remove(entityG);
                     }
-                    if (entityG.Bounds.IntersectsWith(RPlayer.Bounds))
+                    if (entityG.Bounds.IntersectsWith(MainPlayer.Bounds))
                     {
                         currentGhost.Remove((PictureBox)entityG);
                         score += 5;
@@ -346,28 +346,28 @@ namespace RobotGames
                 AmmoBar.Value = ammoCount;
             }
             
-            if (goRight == true && goLeft == false && RPlayer.Left + RPlayer.Width < this.ClientSize.Width - 14 && gameOver != true)
+            if (goRight == true && goLeft == false && MainPlayer.Left + MainPlayer.Width < this.ClientSize.Width - 14 && gameOver != true)
             {
-                RPlayer.Left += playerPower;
+                MainPlayer.Left += playerPower;
             }
-            if (goLeft == true && goRight == false && RPlayer.Left > 4 && gameOver != true)
+            if (goLeft == true && goRight == false && MainPlayer.Left > 4 && gameOver != true)
             {
-                RPlayer.Left -= playerPower;
+                MainPlayer.Left -= playerPower;
             }
             
             foreach (Control entityStop in this.Controls)
             {
                 if (entityStop is PictureBox && (string)entityStop.Name == "stopone" ||
-                  entityStop is PictureBox && (string)entityStop.Name == "stoptwo" ||
-                  entityStop is PictureBox && (string)entityStop.Name == "stopthree" ||
-                  entityStop is PictureBox && (string)entityStop.Name == "stopFour" ||
-                  entityStop is PictureBox && (string)entityStop.Name == "stopFive" ||
-                  entityStop is PictureBox && (string)entityStop.Name == "stopSix")
+                    entityStop is PictureBox && (string)entityStop.Name == "stoptwo" ||
+                    entityStop is PictureBox && (string)entityStop.Name == "stopthree" ||
+                    entityStop is PictureBox && (string)entityStop.Name == "stopFour" ||
+                    entityStop is PictureBox && (string)entityStop.Name == "stopFive" ||
+                    entityStop is PictureBox && (string)entityStop.Name == "stopSix")
                 {
-                    if (entityStop.Bounds.IntersectsWith(RPlayer.Bounds))
+                    if (entityStop.Bounds.IntersectsWith(MainPlayer.Bounds))
                     {
                         pvBar -= 2;
-                        RPlayer.Location = new Point((this.ClientSize.Width / 2) - (RPlayer.Width / 2), 520);
+                        MainPlayer.Location = new Point((this.ClientSize.Width / 2) - (MainPlayer.Width / 2), 520);
                     }
                 }
             }
@@ -375,15 +375,15 @@ namespace RobotGames
             foreach (Control entityWind in this.Controls)
             {
                 if (entityWind is Label && (string)entityWind.Name == "FragCounter" ||
-                  (string)entityWind.Name == "MoneyCount" ||
-                  (string)entityWind.Name == "HalthText" ||
-                  (string)entityWind.Name == "AmmoCount" ||
-                  (string)entityWind.Name == "tops_count"
+                   (string)entityWind.Name == "MoneyCount" ||
+                   (string)entityWind.Name == "HalthText" ||
+                   (string)entityWind.Name == "AmmoCount" ||
+                   (string)entityWind.Name == "tops_count"
                 )
                 {
-                    if (entityWind.Bounds.IntersectsWith(RPlayer.Bounds))
+                    if (entityWind.Bounds.IntersectsWith(MainPlayer.Bounds))
                     {
-                        RPlayer.Location = new Point((this.ClientSize.Width / 2) - (RPlayer.Width / 2), 520);
+                        MainPlayer.Location = new Point((this.ClientSize.Width / 2) - (MainPlayer.Width / 2), 520);
                     }
                 }
             }
@@ -394,44 +394,44 @@ namespace RobotGames
                 {
                     if (entityDown.Bounds.IntersectsWith(patern3.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 367);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 367);
                         entityDown.Dispose();
                     }
                     if (entityDown.Bounds.IntersectsWith(patern4.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 520);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 520);
                         entityDown.Dispose();
                     }
                     if (entityDown.Bounds.IntersectsWith(patern2.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 520);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 520);
                         entityDown.Dispose();
                     }
                     if (entityDown.Bounds.IntersectsWith(patern.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 314);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 314);
                         entityDown.Dispose();
                     }
                     if (entityDown.Bounds.IntersectsWith(patern7.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 238);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 238);
                         entityDown.Dispose();
                     }
                     if (entityDown.Bounds.IntersectsWith(patern5.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 390);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 390);
                         entityDown.Dispose();
                     }
                     if (entityDown.Bounds.IntersectsWith(patern6.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 521);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 521);
                         entityDown.Dispose();
                     }
                 }
@@ -447,44 +447,44 @@ namespace RobotGames
                     }
                     if (navigateB.Bounds.IntersectsWith(patern3.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 154);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 154);
                         navigateB.Dispose();
                     }
                     if (navigateB.Bounds.IntersectsWith(patern.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 94);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 94);
                         navigateB.Dispose();
                     }
                     if (navigateB.Bounds.IntersectsWith(patern2.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 314);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 314);
                         navigateB.Dispose();
                     }
                     if (navigateB.Bounds.IntersectsWith(patern4.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 367);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 367);
                         navigateB.Dispose();
                     }
                     if (navigateB.Bounds.IntersectsWith(patern5.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 238);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 238);
                         navigateB.Dispose();
                     }
                     if (navigateB.Bounds.IntersectsWith(patern6.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 390);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 390);
                         navigateB.Dispose();
                     }
                     if (navigateB.Bounds.IntersectsWith(patern7.Bounds))
                     {
-                        xCoord = (RPlayer.Width / 2) + RPlayer.Left;
-                        RPlayer.Location = new Point(xCoord - 32, 66);
+                        xCoord = (MainPlayer.Width / 2) + MainPlayer.Left;
+                        MainPlayer.Location = new Point(xCoord - 32, 66);
                         navigateB.Dispose();
                     }
                 }
@@ -493,25 +493,25 @@ namespace RobotGames
             foreach (Control entityTree in this.Controls)
             {
                 if (entityTree is PictureBox && (string)entityTree.Name == "tree5" ||
-                  (string)entityTree.Name == "tree" ||
-                  (string)entityTree.Name == "tree2" ||
-                  (string)entityTree.Name == "tree3" ||
-                  (string)entityTree.Name == "tree4" ||
-                  (string)entityTree.Name == "tree6" ||
-                  (string)entityTree.Name == "tree7" ||
-                  (string)entityTree.Name == "tree8" ||
-                  (string)entityTree.Name == "tree10" ||
-                  (string)entityTree.Name == "tree11" ||
-                  (string)entityTree.Name == "tree12" ||
-                  (string)entityTree.Name == "tree13" ||
-                  (string)entityTree.Name == "tree14" ||
-                  (string)entityTree.Name == "tree15"
+                   (string)entityTree.Name == "tree" ||
+                   (string)entityTree.Name == "tree2" ||
+                   (string)entityTree.Name == "tree3" ||
+                   (string)entityTree.Name == "tree4" ||
+                   (string)entityTree.Name == "tree6" ||
+                   (string)entityTree.Name == "tree7" ||
+                   (string)entityTree.Name == "tree8" ||
+                   (string)entityTree.Name == "tree10" ||
+                   (string)entityTree.Name == "tree11" ||
+                   (string)entityTree.Name == "tree12" ||
+                   (string)entityTree.Name == "tree13" ||
+                   (string)entityTree.Name == "tree14" ||
+                   (string)entityTree.Name == "tree15"
                 )
                 {
-                    if (RPlayer.Bounds.IntersectsWith(entityTree.Bounds))
+                    if (MainPlayer.Bounds.IntersectsWith(entityTree.Bounds))
                     {
                         pvBar -= 4;
-                        RPlayer.Location = new Point((this.ClientSize.Width / 2) - (RPlayer.Width / 2), 521);
+                        MainPlayer.Location = new Point((this.ClientSize.Width / 2) - (MainPlayer.Width / 2), 521);
                     }
                 }
             }
@@ -520,19 +520,19 @@ namespace RobotGames
                 if (entityProject is PictureBox && (string)entityProject.Name == "ProjBall")
                 {
                     if (tree.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree2.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree3.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree4.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree5.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree6.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree7.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree8.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree11.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree10.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree12.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree13.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree14.Bounds.IntersectsWith(entityProject.Bounds) ||
-                      tree15.Bounds.IntersectsWith(entityProject.Bounds))
+                        tree2.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree3.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree4.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree5.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree6.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree7.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree8.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree11.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree10.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree12.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree13.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree14.Bounds.IntersectsWith(entityProject.Bounds) ||
+                        tree15.Bounds.IntersectsWith(entityProject.Bounds))
                     {
                         this.Controls.Remove(entityProject);
                         ((PictureBox)entityProject).Dispose();
@@ -589,8 +589,8 @@ namespace RobotGames
             projectiles bullet = new projectiles();
             ammoCount -= 5;
             bullet.travelStatus = move;
-            bullet.leftPosCord = (RPlayer.Width / 2) + RPlayer.Left;
-            bullet.topPosCord = (RPlayer.Width / 2) + RPlayer.Top;
+            bullet.leftPosCord = (MainPlayer.Width / 2) + MainPlayer.Left;
+            bullet.topPosCord = (MainPlayer.Width / 2) + MainPlayer.Top;
             bullet.throwProj(this);
         }
         
@@ -614,8 +614,8 @@ namespace RobotGames
         private void throwJump(string moving)
         {
             navigate jumping = new navigate();
-            jumping.topPos = (RPlayer.Width / 2) + RPlayer.Top;
-            jumping.leftPos = (RPlayer.Width / 2) + RPlayer.Left;
+            jumping.topPos = (MainPlayer.Width / 2) + MainPlayer.Top;
+            jumping.leftPos = (MainPlayer.Width / 2) + MainPlayer.Left;
             jumping.startJump(this);
         }
 
@@ -630,8 +630,8 @@ namespace RobotGames
         private void goDown()
         {
             downto downP = new downto();
-            downP.currentTop = (RPlayer.Width / 2) + RPlayer.Top + 32;
-            downP.currentLeft = (RPlayer.Width / 2) + RPlayer.Left;
+            downP.currentTop = (MainPlayer.Width / 2) + MainPlayer.Top + 32;
+            downP.currentLeft = (MainPlayer.Width / 2) + MainPlayer.Left;
             downP.DownPlayer(this);
         }
         private void summonMonsterleft()
@@ -751,11 +751,11 @@ namespace RobotGames
             }
 
             pvBar = 0;
-            RPlayer.Location = new Point((this.ClientSize.Width / 2) - (RPlayer.Width / 2), 520); ;
-            RPlayer.Image = Properties.Resources.tombstone;
+            MainPlayer.Location = new Point((this.ClientSize.Width / 2) - (MainPlayer.Width / 2), 520); ;
+            MainPlayer.Image = Properties.Resources.tombstone;
 
-            checkPlayerStats.Stop();
-            SpawnerOfMoney.Stop();
+            playerStatusChecker.Stop();
+            moneyTimer.Stop();
         }
         private void replay()
         {
@@ -764,7 +764,7 @@ namespace RobotGames
                 MainTimer.Stop();
 
                 gameOver = false;
-                RPlayer.Image = Properties.Resources.robot;
+                MainPlayer.Image = Properties.Resources.robot;
                 pvBar = 100;
                 score = 0;
                 money = 0;
@@ -779,8 +779,8 @@ namespace RobotGames
                 summonMonsterRight();
 
                 MainTimer.Start();
-                checkPlayerStats.Start();
-                SpawnerOfMoney.Start();
+                playerStatusChecker.Start();
+                moneyTimer.Start();
             }
             catch(Exception error)
             {

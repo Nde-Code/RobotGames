@@ -46,7 +46,7 @@ namespace RobotGames
             this.tree10 = new System.Windows.Forms.PictureBox();
             this.tree8 = new System.Windows.Forms.PictureBox();
             this.tree7 = new System.Windows.Forms.PictureBox();
-            this.RPlayer = new System.Windows.Forms.PictureBox();
+            this.MainPlayer = new System.Windows.Forms.PictureBox();
             this.tree5 = new System.Windows.Forms.PictureBox();
             this.tree4 = new System.Windows.Forms.PictureBox();
             this.tree3 = new System.Windows.Forms.PictureBox();
@@ -68,8 +68,8 @@ namespace RobotGames
             this.tree14 = new System.Windows.Forms.PictureBox();
             this.tree15 = new System.Windows.Forms.PictureBox();
             this.stopSix = new System.Windows.Forms.PictureBox();
-            this.checkPlayerStats = new System.Windows.Forms.Timer(this.components);
-            this.SpawnerOfMoney = new System.Windows.Forms.Timer(this.components);
+            this.playerStatusChecker = new System.Windows.Forms.Timer(this.components);
+            this.moneyTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tree13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree11)).BeginInit();
@@ -77,7 +77,7 @@ namespace RobotGames
             ((System.ComponentModel.ISupportInitialize)(this.tree10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree3)).BeginInit();
@@ -252,15 +252,15 @@ namespace RobotGames
             this.tree7.TabIndex = 21;
             this.tree7.TabStop = false;
             // 
-            // RPlayer
+            // MainPlayer
             // 
-            this.RPlayer.Image = global::RobotGames.Properties.Resources.robot;
-            this.RPlayer.Location = new System.Drawing.Point(725, 641);
-            this.RPlayer.Name = "RPlayer";
-            this.RPlayer.Size = new System.Drawing.Size(64, 64);
-            this.RPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.RPlayer.TabIndex = 19;
-            this.RPlayer.TabStop = false;
+            this.MainPlayer.Image = global::RobotGames.Properties.Resources.robot;
+            this.MainPlayer.Location = new System.Drawing.Point(725, 641);
+            this.MainPlayer.Name = "MainPlayer";
+            this.MainPlayer.Size = new System.Drawing.Size(64, 64);
+            this.MainPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.MainPlayer.TabIndex = 19;
+            this.MainPlayer.TabStop = false;
             // 
             // tree5
             // 
@@ -452,17 +452,17 @@ namespace RobotGames
             this.stopSix.TabIndex = 38;
             this.stopSix.TabStop = false;
             // 
-            // checkPlayerStats
+            // playerStatusChecker
             // 
-            this.checkPlayerStats.Enabled = true;
-            this.checkPlayerStats.Interval = 3000;
-            this.checkPlayerStats.Tick += new System.EventHandler(this.currentPlayer);
+            this.playerStatusChecker.Enabled = true;
+            this.playerStatusChecker.Interval = 3000;
+            this.playerStatusChecker.Tick += new System.EventHandler(this.currentPlayer);
             // 
-            // SpawnerOfMoney
+            // moneyTimer
             // 
-            this.SpawnerOfMoney.Enabled = true;
-            this.SpawnerOfMoney.Interval = 2000;
-            this.SpawnerOfMoney.Tick += new System.EventHandler(this.spawnMoney);
+            this.moneyTimer.Enabled = true;
+            this.moneyTimer.Interval = 2000;
+            this.moneyTimer.Tick += new System.EventHandler(this.spawnMoney);
             // 
             // Form1
             // 
@@ -487,7 +487,7 @@ namespace RobotGames
             this.Controls.Add(this.tree10);
             this.Controls.Add(this.tree8);
             this.Controls.Add(this.tree7);
-            this.Controls.Add(this.RPlayer);
+            this.Controls.Add(this.MainPlayer);
             this.Controls.Add(this.tree5);
             this.Controls.Add(this.tree4);
             this.Controls.Add(this.tree3);
@@ -521,7 +521,7 @@ namespace RobotGames
             ((System.ComponentModel.ISupportInitialize)(this.tree10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tree3)).EndInit();
@@ -568,7 +568,7 @@ namespace RobotGames
         private System.Windows.Forms.PictureBox tree3;
         private System.Windows.Forms.PictureBox tree4;
         private System.Windows.Forms.PictureBox tree5;
-        private System.Windows.Forms.PictureBox RPlayer;
+        private System.Windows.Forms.PictureBox MainPlayer;
         private System.Windows.Forms.PictureBox tree7;
         private System.Windows.Forms.PictureBox tree8;
         private System.Windows.Forms.PictureBox tree10;
@@ -587,8 +587,8 @@ namespace RobotGames
         private System.Windows.Forms.PictureBox tree14;
         private System.Windows.Forms.PictureBox tree15;
         private System.Windows.Forms.PictureBox stopSix;
-        private System.Windows.Forms.Timer checkPlayerStats;
-        private System.Windows.Forms.Timer SpawnerOfMoney;
+        private System.Windows.Forms.Timer playerStatusChecker;
+        private System.Windows.Forms.Timer moneyTimer;
     }
 }
 
