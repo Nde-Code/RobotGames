@@ -29,7 +29,6 @@ namespace RobotGames
         {
             downProj.Size = new Size(10, 10);
             downProj.Name = "LaunchDown";
-            //downProj.BackColor = Color.Black;
             downProj.Left = currentLeft;
             downProj.Top = currentTop;
             downProj.BringToFront();
