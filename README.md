@@ -34,6 +34,8 @@ Les blocs de pierre faisant office de passerelles, sont fait par moi, et l'herbe
 
 - Les cartouches par Freepik: https://www.flaticon.com/free-icon/bullet_884473?term=ammo&page=1&position=15&page=1&position=15&related_id=884473&origin=search
 
+- Mon Favicon est fait avec Logomakr: https://logomakr.com/
+
 # Licence:
 
 À obligatoirement respecter: "Apache License 2.0".
